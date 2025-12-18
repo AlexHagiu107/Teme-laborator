@@ -1,11 +1,14 @@
-input_str = input("Introdu numere separate prin virgula: ")
+import math
 
-# Convertim inputul intr-o lista de intregi
-numere = [int(x.strip()) for x in input_str.split(",")]
+def distance(x1, y1, x2, y2):
+    return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
 
-maxim = max(numere)
-minim = min(numere)
+x1 = float(input("Introdu x1: "))
+y1 = float(input("Introdu y1: "))
+x2 = float(input("Introdu x2: "))
+y2 = float(input("Introdu y2: "))
 
-print("Lista:", numere)
-print("Maximul este:", maxim)
-print("Minimul este:", minim)
+# Calcularea distantei
+distanta = distance(x1, y1, x2, y2)
+
+print("Distanta dintre cele doua puncte este:", distanta)

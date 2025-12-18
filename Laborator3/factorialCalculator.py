@@ -1,14 +1,15 @@
-input_str = input("Introdu valori separate prin virgula: ")
+def factorial(n):
+    if n < 0:
+        return None
+    rezultat = 1
+    for i in range(1, n + 1):
+        rezultat *= i
+    return rezultat
 
-# Cream tupla
-tupla = tuple(int(x.strip()) for x in input_str.split(","))
+numar = int(input("Introdu un număr întreg: "))
+fact = factorial(numar)
 
-valoare = int(input("Introdu valoarea cautata: "))
-
-if valoare in tupla:
-    index = tupla.index(valoare)
-    print("Tupla:", tupla)
-    print(f"{valoare} se regaseste in tupla la indexul {index}.")
+if fact is None:
+    print("Factorialul nu este definit pentru numere negative.")
 else:
-    print("Tupla:", tupla)
-    print(f"{valoare} NU se regaseste in tupla.")
+    print(f"Factorialul lui {numar} este {fact}.")

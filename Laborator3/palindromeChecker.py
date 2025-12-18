@@ -1,10 +1,10 @@
-input_str = input("Introdu numere separate prin virgula: ")
+def is_palindrome(word):
+    word = word.lower()
+    return word == word[::-1]
 
-numere = [int(x.strip()) for x in input_str.split(",")]
+cuvant = input("Introdu un cuvant: ")
 
-lista_unica = []
-for numar in numere:
-    if numar not in lista_unica:
-        lista_unica.append(numar)
-
-print("Lista fara duplicate:", lista_unica)
+if is_palindrome(cuvant):
+    print(f"'{cuvant}' este un palindrom.")
+else:
+    print(f"'{cuvant}' nu este un palindrom.")
